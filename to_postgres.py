@@ -8,9 +8,6 @@ ssl._create_default_https_context = ssl._create_unverified_context
 __all__ = ['save_to_postgres']
 
 def save_to_postgres(**kwargs):
-    # CSV 파일을 Pandas DataFrame으로 로드
-    # csv_file_path = '/opt/airflow/dags/crawl_data/generative_ai_data.csv'
-    # df = pd.read_csv(csv_file_path)
     ti = kwargs['ti']
     df = ti.xcom_pull(task_ids='get_books', key='data') 
     # PostgreSQL 연결 정보 설정
