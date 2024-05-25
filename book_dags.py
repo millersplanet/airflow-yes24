@@ -19,7 +19,7 @@ with DAG(
     dag_id="yes24_book_pipeline",
     schedule_interval="@daily",
     default_args=default_args,
-    tags=['book','yes24','api'],
+    tags=['book','yes24'],
     catchup=False,
 ) as dag:
     
